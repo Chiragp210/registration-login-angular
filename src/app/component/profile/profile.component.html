@@ -1,0 +1,33 @@
+<div [@fadeInOut]>
+    <div style="padding: 20px;">
+        <h1 style="text-align: center;">Profile Details:</h1>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <div class="card" style="width: 50%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <div class="card-header p-3" style="font-size: 28px;">
+                    {{ profile?.name }}
+                </div>
+                <div class="card-body">
+                    <tr>
+                        <td style="font-size: 20px; font-weight: bolder;">
+                            <h3>Email: &nbsp;</h3>
+                        </td>
+                        <td style="font-size: 17px;">{{ profile?.email }}</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px; font-weight: bolder;">
+                            <h3>Mobile: &nbsp;</h3>
+                        </td>
+                        <td style="font-size: 17px;">{{ profile?.mobile }}</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 20px; font-weight: bolder;">
+                            <h3>City: &nbsp;</h3>
+                        </td>
+                        <td style="font-size: 17px;">{{ profile?.city }}</td>
+                    </tr>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,74 @@
+<div style="padding: 20px;">
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div class="card rounded" style="width: 80%; max-width: 600px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <h2 style="text-align: center; padding-top: 10px;">Registration/SignUp</h2>
+            <form (ngSubmit)="onRegister()" [formGroup]="registrationForm"
+                style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                <div class="mx-5" style="width: 100%; display: flex; flex-wrap: wrap;">
+                    <!-- Name Field -->
+                    <mat-form-field class="px-3" style="width: calc(100% - 10px);" appearance="outline">
+                        <mat-label>Name</mat-label>
+                        <input matInput placeholder="Name" formControlName="name">
+                        <mat-error
+                            *ngIf="registrationForm.get('name')?.invalid && (registrationForm.get('name')?.dirty || registrationForm.get('name')?.touched)">
+                            Name is required
+                        </mat-error>
+                    </mat-form-field>
+                    <br>
+
+                    <!--Email Field-->
+                    <mat-form-field class="px-3" style="width: calc(100% - 10px);" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Email" type="email" formControlName="email">
+                        <mat-error
+                            *ngIf="registrationForm.get('email')?.invalid && (registrationForm.get('email')?.dirty || registrationForm.get('email')?.touched)">
+                            Valid Email address is required
+                        </mat-error>
+                    </mat-form-field>
+                    <br>
+
+                    <!--Mobile Field-->
+                    <mat-form-field class="px-3" style="width: calc(100% - 10px);" appearance="outline">
+                        <mat-label>Mobile</mat-label>
+                        <input matInput placeholder="Mobile" type="text" formControlName="mobile" min="0">
+                        <mat-error
+                            *ngIf="registrationForm.get('mobile')?.invalid && (registrationForm.get('mobile')?.dirty || registrationForm.get('mobile')?.touched)">
+                            Valid Mobile address is required
+                        </mat-error>
+                    </mat-form-field>
+                    <br>
+
+                    <!--City Field-->
+                    <mat-form-field class="px-3" style="width: calc(100% - 10px);" appearance="outline">
+                        <mat-label>City</mat-label>
+                        <input matInput placeholder="City" type="text" formControlName="city">
+                        <mat-error
+                            *ngIf="registrationForm.get('city')?.invalid && (registrationForm.get('city')?.dirty || registrationForm.get('city')?.touched)">
+                            Valid City address is required
+                        </mat-error>
+                    </mat-form-field>
+                    <br>
+
+                    <!-- Password Field -->
+                    <mat-form-field class="px-3" style="width: 100%;" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password"
+                            formControlName="password" >
+                        <mat-error
+                            *ngIf="registrationForm.get('password')?.invalid && (registrationForm.get('password')?.dirty || registrationForm.get('password')?.touched)">
+                            Password is required and must be at least 6 characters long
+                        </mat-error>
+                    </mat-form-field>
+        </div>
+        <div class="example-button p-3 rounded">
+            <button type="submit" mat-raised-button color="primary" class="rounded p-3">Register</button>
+        </div>
+
+        <div class="example-button p-3 rounded">
+            <p style="font-size: larger;">Already have account? <a routerLink="/" class="btn-primary"
+                    role="button">Login</a></p>
+        </div>
+        </form>
+    </div>
+</div>
+</div>
